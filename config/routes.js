@@ -15,7 +15,7 @@ module.exports = server => {
 function register(req, res) {
   // implement user registration
   let user = req.body;
-  const hash = bcrypt.hashSync(user.password, 10); // 2 ^ n
+  const hash = bcrypt.hashSync(user.password, 5);
   user.password = hash;
 
   Users.add(user)
